@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DomainLayer.Entities
 {
-    public class Group : BaseEntity
+    public class CourseGroup : BaseEntity
     {
         public string Name { get; set; }
         public string Teacher { get; set; }
