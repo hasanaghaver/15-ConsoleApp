@@ -8,7 +8,7 @@ namespace CourseApp
     {
         static void Main(string[] args)
         {
-            GroupController _groupController = new();
+            Option2 option2 = new();
             bool a = true;
             while (a)
             {
@@ -24,48 +24,22 @@ namespace CourseApp
                     switch (result1)
                     {
                         case 1:
-                            Console.Clear();
-                            Design.MYCw(ConsoleColor.Yellow, "1 - Create Group \n2 - Update group    \n3 - Delete Group   \n4 - Get group  by id" +
-                                " \n5 - Get all groups  by teacher  \n6 - Get all groups by room \n7 - Get all groups ");
-                            string option2 = Console.ReadLine();
-                            if (!int.TryParse(option2, out int result2))
-                            {
-                                Design.MYCw(ConsoleColor.Red, "Incorrect option");
-                            }
-                            else
-                            {
-                                switch (result2)
-                                {
-                                    case 1:
-                                        _groupController.Create();
-                                        break;
-                                    case 3:
-                                        _groupController.Delete();
-                                        break;
-                                    case 4:
-                                        _groupController.GetById();
-                                        break;
-                                    case 5:
-                                        _groupController.GetByTeacher();
-                                        break;
-                                    case 6:
-                                        _groupController.GetByRoom();
-                                        break;
-                                    case 7:
-                                        _groupController.GetAll();
-                                        break;
-                                }
-                            }
+                            option2.Switch();
+                            break;
+                        case 2:
                             break;
                         case 3:
                             a = false;
                             break;
-                        
+                        default:
+                            Design.MYCw(ConsoleColor.Red, "Unknown option,Enter retry");
+                            goto EnterOption1;
+
                     }
                 }
             }
-            
-            
+
+
         }
     }
 }

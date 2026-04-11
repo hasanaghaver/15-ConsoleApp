@@ -10,3 +10,15 @@ C:\Users\Classtime.PC_6_213_17\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debu
 C:\Users\Classtime.PC_6_213_17\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\refint\DomainLayer.dll
 C:\Users\Classtime.PC_6_213_17\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\DomainLayer.pdb
 C:\Users\Classtime.PC_6_213_17\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\ref\DomainLayer.dll
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\bin\Debug\net8.0\DomainLayer.deps.json
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\bin\Debug\net8.0\DomainLayer.dll
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\bin\Debug\net8.0\DomainLayer.pdb
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\DomainLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\DomainLayer.AssemblyInfoInputs.cache
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\DomainLayer.AssemblyInfo.cs
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\DomainLayer.csproj.CoreCompileInputs.cache
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\DomainLayer.sourcelink.json
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\DomainLayer.dll
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\refint\DomainLayer.dll
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\DomainLayer.pdb
+C:\Users\hasan\OneDrive\Desktop\15-ConsoleApp\Course\DomainLayer\obj\Debug\net8.0\ref\DomainLayer.dll

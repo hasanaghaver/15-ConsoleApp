@@ -20,10 +20,15 @@ namespace ServiceLayer.Services.Implimentation
         }
         public CourseGroup CreateGroup(CourseGroup data)
         {
-            data.Id = _count;
-            _groupRepository.Create(data);
-            _count++;
-            return data;
+            CourseGroup group = SearcdForGroupsByName(data.Name);
+            if (group is null)
+            {
+                data.Id = _count;
+                _groupRepository.Create(data);
+                _count++;
+                return data;
+            }
+            return null;
         }
 
         public bool DeleteGroup(int id)
@@ -51,29 +56,33 @@ namespace ServiceLayer.Services.Implimentation
 
         public List<CourseGroup> GetByTeacher(string teacherName)
         {
-            List<CourseGroup> datas = _groupRepository.GetAll(i => i.Teacher == teacherName);
+            List<CourseGroup> datas = _groupRepository.GetAll(i => i.Teacher.ToLower() == teacherName.Trim().ToLower());
             return datas;
         }
 
         public CourseGroup GetGroupById(int id)
         {
-            CourseGroup course = _groupRepository.GetById(i => i.Id == id);
+            CourseGroup course = _groupRepository.Get(i => i.Id == id);
             if (course is null) return null;
             return course;
         }
 
-        public List<CourseGroup> SearcdForGroupsByName(string name)
+        public CourseGroup SearcdForGroupsByName(string name)
         {
-            throw new NotImplementedException();
+            CourseGroup course = _groupRepository.Get(i => i.Name.ToLower() == name.Trim().ToLower());
+            if (course is null) return null;
+            return course;
         }
 
-        public void UpdateGroup(int id, CourseGroup data)
+        public bool UpdateGroup(int id, CourseGroup data)
         {
             CourseGroup result = GetGroupById(id);
-            if (result != null)
+            if (result == null)
             {
-                _groupRepository.Update(id, data);
+                return false;
             }
+            _groupRepository.Update(id, data);
+            return true;
         }
     }
 }

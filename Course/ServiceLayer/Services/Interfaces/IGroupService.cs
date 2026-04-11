@@ -11,12 +11,12 @@ namespace ServiceLayer.Services.Interfaces
     interface IGroupService
     {
         public CourseGroup CreateGroup(CourseGroup data);
-        public void UpdateGroup(int id, CourseGroup data);
+        public bool UpdateGroup(int id, CourseGroup data);
         public bool DeleteGroup(int id);
         public CourseGroup GetGroupById(int id);
         public List<CourseGroup> GetByTeacher(string teacherName);
         public List<CourseGroup> GetByRoom(int room);
         public List<CourseGroup> GetAllGroup();
-        public List<CourseGroup> SearcdForGroupsByName(string name);
+        public CourseGroup SearcdForGroupsByName(string name);
     }
 }

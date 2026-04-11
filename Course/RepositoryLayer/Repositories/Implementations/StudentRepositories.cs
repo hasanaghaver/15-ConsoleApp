@@ -19,7 +19,7 @@ namespace RepositoryLayer.Repositories.Implementations
         {
             throw new NotImplementedException();
         }
-        public Student GetById(Predicate<Student> predicate)
+        public Student Get(Predicate<Student> predicate)
         {
             throw new NotImplementedException();
         }

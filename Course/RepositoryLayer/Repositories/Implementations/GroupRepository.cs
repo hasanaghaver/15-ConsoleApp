@@ -27,16 +27,19 @@ namespace RepositoryLayer.Repositories.Implementations
         }
         public void Update(int id, CourseGroup data)
         {
-            AppDbContext<CourseGroup>.datas.Find(i=> i.Id == id).Name= data.Name;
-            AppDbContext<CourseGroup>.datas.Find(i => i.Id == id).Teacher = data.Teacher;
-            AppDbContext<CourseGroup>.datas.Find(i => i.Id == id).Room = data.Room;
-
+            var existGroup = AppDbContext<CourseGroup>.datas.Find(i => i.Id == id);
+            if (existGroup != null)
+            {
+                existGroup.Name = data.Name;
+                existGroup.Teacher = data.Teacher;
+                existGroup.Room = data.Room;
+            }
         }
         public void Delete(CourseGroup data)
         {
             AppDbContext<CourseGroup>.datas.Remove(data);
         }
-        public CourseGroup GetById(Predicate<CourseGroup> predicate)
+        public CourseGroup Get(Predicate<CourseGroup> predicate)
         {
             return predicate != null ? AppDbContext<CourseGroup>.datas.Find(predicate) : null;
         }
