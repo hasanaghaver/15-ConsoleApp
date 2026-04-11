@@ -43,11 +43,6 @@ namespace RepositoryLayer.Repositories.Implementations
         {
             return predicate != null ? AppDbContext<CourseGroup>.datas.Find(predicate) : null;
         }
- 
-        public Student SearcdForGroupsByName(string name)
-        {
-            throw new Exception();
-        }
 
         public List<CourseGroup> GetAll(Predicate<CourseGroup> predicate)
         {

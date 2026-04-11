@@ -1,5 +1,6 @@
 ﻿using DomainLayer.Entities;
 using ServiceLayer.Services.Interfaces;
+using RepositoryLayer.Repositories.Implementations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,39 +11,64 @@ namespace ServiceLayer.Services.Implimentation
 {
     public class StudentService : IStudentService
     {
-        public void CreateStudent(Student data)
+        private StudentRepositories _studentRepossitories;
+        private int _count = 1;
+        public StudentService()
         {
-            throw new NotImplementedException();
+            _studentRepossitories = new();
         }
 
-        public void DeleteStudent(int id)
+        public Student CreateStudent(Student data)
         {
-            throw new NotImplementedException();
+            data.Id = _count;
+            _count++;
+            _studentRepossitories.Create(data);
+            return data;
+        }
+
+        public bool DeleteStudent(int id)
+        {
+            Student exsist = GetStudentById(id);
+            if (exsist == null) return false;
+            _studentRepossitories.Delete(exsist);
+            return true;
         }
 
         public List<Student> GetAllByGroupId(int id)
         {
-            throw new NotImplementedException();
+            List<Student> students = _studentRepossitories.GetAll(i => i.group.Id == id);
+            return students;
         }
 
-        public Student GetStudentById(Predicate<Student> predicate)
+        public Student GetStudentById(int id)
         {
-            throw new NotImplementedException();
+            Student exsist = _studentRepossitories.Get(i => i.Id == id);
+            return exsist;
         }
 
-        public Student GetStudentsByAge(int age)
+        public List<Student> GetStudentsByAge(int age)
         {
-            throw new NotImplementedException();
+            List<Student> exsist = _studentRepossitories.GetAll(i=> i.Age == age);
+            return exsist;
         }
 
-        public Student SearchStudentForNameOrSurname(string nameOrSurname)
+        public List<Student> SearchStudentForNameOrSurname(string nameOrSurname)
         {
-            throw new NotImplementedException();
+            List<Student> exsistfull = _studentRepossitories.GetAll(i=>i.Name.ToLower() == nameOrSurname);
+            List<Student> exsistsurname = _studentRepossitories.GetAll(i=>i.Surname.ToLower() == nameOrSurname);
+            exsistfull.AddRange(exsistsurname);
+            return exsistfull;
         }
 
-        public void UpdateStudent(int id, Student data)
+        public bool UpdateStudent(int id, Student data)
         {
-            throw new NotImplementedException();
+            Student result = GetStudentById(id);
+            if (result == null)
+            {
+                return false;
+            }
+            _studentRepossitories.Update(id, data);
+            return true;
         }
     }
 }

@@ -9,12 +9,12 @@ namespace ServiceLayer.Services.Interfaces
 {
     interface IStudentService
     {
-        public void CreateStudent(Student data);
-        public void UpdateStudent(int id, Student data);
-        public Student GetStudentById(Predicate<Student> predicate);
-        public void DeleteStudent(int id);
-        public Student GetStudentsByAge(int age);
+        public Student CreateStudent(Student data);
+        public bool UpdateStudent(int id, Student data);
+        public Student GetStudentById(int id);
+        public bool DeleteStudent(int id);
+        public List<Student> GetStudentsByAge(int age);
         public List<Student> GetAllByGroupId(int id);
-        public Student SearchStudentForNameOrSurname(string nameOrSurname);
+        public List<Student> SearchStudentForNameOrSurname(string nameOrSurname);
     }
 }

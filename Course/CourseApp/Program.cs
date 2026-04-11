@@ -8,15 +8,25 @@ namespace CourseApp
     {
         static void Main(string[] args)
         {
-            Option2 option2 = new();
+            Options option = new();
+
             bool a = true;
             while (a)
             {
-                Design.MYCw(ConsoleColor.DarkCyan, "What do you want? \n1-Group \n2-Student  \n3-Exit");
+                Console.Clear();
+                Design.MYCw(ConsoleColor.Cyan, "====================================");
+                Design.MYCw(ConsoleColor.Cyan, "       COURSE MANAGEMENT MENU       ");
+                Design.MYCw(ConsoleColor.Cyan, "====================================");
+
+                Design.MYCw(ConsoleColor.DarkCyan, "\nPlease select an option:");
+                Console.WriteLine("1 - Group Operations");
+                Console.WriteLine("2 - Student Operations");
+                Console.WriteLine("3 - Exit");
+                Design.MYCw(ConsoleColor.Cyan, "------------------------------------");
             EnterOption1: string option1 = Console.ReadLine();
                 if (!int.TryParse(option1, out int result1))
                 {
-                    Design.MYCw(ConsoleColor.Red, "Incorrect option");
+                    Design.MYCw(ConsoleColor.Red, "[!] Incorrect option");
                     goto EnterOption1;
                 }
                 else
@@ -24,15 +34,16 @@ namespace CourseApp
                     switch (result1)
                     {
                         case 1:
-                            option2.Switch();
+                            option.Switch1();
                             break;
                         case 2:
+                            option.Switch2();
                             break;
                         case 3:
                             a = false;
                             break;
                         default:
-                            Design.MYCw(ConsoleColor.Red, "Unknown option,Enter retry");
+                            Design.MYCw(ConsoleColor.Red, "[!] Unknown option,Enter retry");
                             goto EnterOption1;
 
                     }
