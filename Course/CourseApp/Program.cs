@@ -14,15 +14,18 @@ namespace CourseApp
             while (a)
             {
                 Console.Clear();
-                Design.MYCw(ConsoleColor.Cyan, "====================================");
-                Design.MYCw(ConsoleColor.Cyan, "       COURSE MANAGEMENT MENU       ");
-                Design.MYCw(ConsoleColor.Cyan, "====================================");
+                Console.Clear();
+                Design.MYCw(ConsoleColor.Cyan, "┌──────────────────────────────────────────────────────────┐");
+                Design.MYCw(ConsoleColor.Cyan, "│                COURSE MANAGEMENT SYSTEM                  │");
+                Design.MYCw(ConsoleColor.Cyan, "├──────────────────────────────────────────────────────────┤");
+                Design.MYCw(ConsoleColor.Cyan, "│                                                          │");
+                Design.MYCw(ConsoleColor.Yellow, "│               1. GROUP OPERATIONS                        │");
+                Design.MYCw(ConsoleColor.Yellow, "│               2. STUDENT OPERATIONS                      │");
+                Design.MYCw(ConsoleColor.Yellow, "│               3. EXIT SYSTEM                             │");
+                Design.MYCw(ConsoleColor.Cyan, "│                                                          │");
+                Design.MYCw(ConsoleColor.Cyan, "└──────────────────────────────────────────────────────────┘");
 
-                Design.MYCw(ConsoleColor.DarkCyan, "\nPlease select an option:");
-                Console.WriteLine("1 - Group Operations");
-                Console.WriteLine("2 - Student Operations");
-                Console.WriteLine("3 - Exit");
-                Design.MYCw(ConsoleColor.Cyan, "------------------------------------");
+                Design.MYCw(ConsoleColor.DarkCyan, "\n[?] Enter your choise: ");
             EnterOption1: string option1 = Console.ReadLine();
                 if (!int.TryParse(option1, out int result1))
                 {

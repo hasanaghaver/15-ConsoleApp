@@ -27,6 +27,7 @@ namespace CourseApp.Common
             Design.MYCw(ConsoleColor.Cyan, "├─────────────────────────────┴────────────────────────────┤");
             Design.MYCw(ConsoleColor.Red, "│                      9. EXIT                             │");
             Design.MYCw(ConsoleColor.Cyan, "└──────────────────────────────────────────────────────────┘");
+            Design.MYCw(ConsoleColor.DarkCyan, "\n[?] Enter your choise: ");
         Option2: string option2 = Console.ReadLine();
             if (!int.TryParse(option2, out int result2))
             {
@@ -91,6 +92,7 @@ namespace CourseApp.Common
             Design.MYCw(ConsoleColor.Cyan, "├─────────────────────────────┴────────────────────────────┤");
             Design.MYCw(ConsoleColor.Red, "│                      8. EXIT                             │");
             Design.MYCw(ConsoleColor.Cyan, "└──────────────────────────────────────────────────────────┘");
+            Design.MYCw(ConsoleColor.DarkCyan, "\n[?] Enter your choise: ");
         Option2: string option2 = Console.ReadLine();
             if (!int.TryParse(option2, out int result2))
             {
