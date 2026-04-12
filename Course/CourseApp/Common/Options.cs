@@ -31,7 +31,7 @@ namespace CourseApp.Common
         Option2: string option2 = Console.ReadLine();
             if (!int.TryParse(option2, out int result2))
             {
-                Design.MYCw(ConsoleColor.Red, "Incorrect option");
+                Design.MYCw(ConsoleColor.Red, "[!] Invalid input. Please enter a number.");
                 goto Option2;
             }
             else
@@ -74,7 +74,7 @@ namespace CourseApp.Common
                         Console.Clear();
                         break;
                     default:
-                        Design.MYCw(ConsoleColor.Red, "Unknown option,Enter retry");
+                        Design.MYCw(ConsoleColor.Red, "[!] Unknown option! Please try again.");
                         goto Option2;
                 }
             }
@@ -96,7 +96,7 @@ namespace CourseApp.Common
         Option2: string option2 = Console.ReadLine();
             if (!int.TryParse(option2, out int result2))
             {
-                Design.MYCw(ConsoleColor.Red, "Incorrect option"); goto Option2;
+                Design.MYCw(ConsoleColor.Red, "[!] Invalid input. Please enter a number."); goto Option2;
             }
             else
             {
@@ -104,30 +104,37 @@ namespace CourseApp.Common
                 {
                     case 1:
                         _controller.StudentCreate();
+                        _controller.Exit();
                         break;
                     case 2:
                         _controller.StudentUpdate();
+                        _controller.Exit();
                         break;
                     case 3:
                         _controller.StudentDelete();
+                        _controller.Exit();
                         break;
                     case 4:
                         _controller.StudentGetID();
+                        _controller.Exit();
                         break;
                     case 5:
                         _controller.StudentGetByAge();
+                        _controller.Exit();
                         break;
                     case 6:
                         _controller.StudentGetByNameOrSurname();
+                        _controller.Exit();
                         break;
                     case 7:
                         _controller.StudentGetByGroupId();
+                        _controller.Exit();
                         break;
                     case 8:
                         Console.Clear();
                         break;
                     default:
-                        Design.MYCw(ConsoleColor.Red, "Unknown option,Enter retry");
+                        Design.MYCw(ConsoleColor.Red, "[!] Unknown option! Please try again.");
                         goto Option2;
                 }
             }

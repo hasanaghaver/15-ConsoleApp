@@ -43,6 +43,7 @@ namespace CourseApp
                             option.Switch2();
                             break;
                         case 3:
+                            Design.MYCw(ConsoleColor.Magenta, "\n[i] Shutting down... Goodbye!");
                             a = false;
                             break;
                         default:
