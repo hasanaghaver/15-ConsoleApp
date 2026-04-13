@@ -36,6 +36,11 @@ namespace CourseApp.Common
                 Design.MYCw(ConsoleColor.Red, "[!] Error: Teacher name is null!");
                 goto teachername;
             }
+            if (char.IsDigit(teachername[0]))
+            {
+                Design.MYCw(ConsoleColor.Red, "[!] Error: Teacher name ıs number!");
+                goto teachername;
+            }
         RoomNum: Design.MYCw(ConsoleColor.Blue, "[?] Enter room number:");
             string room = Console.ReadLine();
             if (!int.TryParse(room, out int roomNum))
@@ -188,13 +193,18 @@ namespace CourseApp.Common
                 return;
             }
 
-            Console.WriteLine($"[?] Current Name: {existGroup.Name}. Enter New Name(leave blank to keep):");
+         Design.MYCw(ConsoleColor.Blue, $"[?] Current Name: {existGroup.Name}. Enter New Name(leave blank to keep):");
             string newName = Console.ReadLine();
             if (string.IsNullOrEmpty(newName)) newName = existGroup.Name;
 
-            Console.WriteLine($"[?] Current Teacher: {existGroup.Teacher}. Enter New Teacher:(leave blank to keep)");
+        Teachername: Design.MYCw(ConsoleColor.Blue, $"[?] Current Teacher: {existGroup.Teacher}. Enter New Teacher:(leave blank to keep)");
             string newTeacher = Console.ReadLine();
             if (string.IsNullOrEmpty(newTeacher)) newTeacher = existGroup.Teacher;
+            if (char.IsDigit(newTeacher[0]))
+            {
+                Design.MYCw(ConsoleColor.Red, "[!] Error:Teacher name is number!");
+                goto Teachername;
+            }
 
             NewRoom: Design.MYCw(ConsoleColor.Blue, $"[?]Current Room: {existGroup.Room}. Enter New Room:");
             string strRoom = Console.ReadLine();
@@ -263,11 +273,21 @@ namespace CourseApp.Common
                     Design.MYCw(ConsoleColor.Red, "[!] Error: Name is empty!");
                     goto Name;
                 }
+                if (char.IsDigit(name[0]))
+                {
+                    Design.MYCw(ConsoleColor.Red, "[!] Error: Name is number!");
+                    goto Name;
+                }
             surnamename: Design.MYCw(ConsoleColor.Blue, "[?] Enter student's Surname:");
                 string surnamename = Console.ReadLine();
                 if (string.IsNullOrEmpty(surnamename))
                 {
                     Design.MYCw(ConsoleColor.Red, "[!] Error: Surname is empty!");
+                    goto surnamename;
+                }
+                if (char.IsDigit(surnamename[0]))
+                {
+                    Design.MYCw(ConsoleColor.Red, "[!] Error: Surname is number!");
                     goto surnamename;
                 }
             Age: Design.MYCw(ConsoleColor.Blue, "[?] Enter student's Age (17+):");
