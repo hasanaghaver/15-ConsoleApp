@@ -22,10 +22,20 @@ namespace CourseApp.Common
         public void GroupCreate()
         {
             Console.Clear();
-            Design.MYCw(ConsoleColor.Blue, "[?] Enter Group Name:");
+        name: Design.MYCw(ConsoleColor.Blue, "[?] Enter Group Name:");
             string name = Console.ReadLine();
-            Design.MYCw(ConsoleColor.Blue, "[?] Enter Teacher Name:");
+            if (string.IsNullOrEmpty(name))
+            {
+                Design.MYCw(ConsoleColor.Red, "[!] Error: Name is null!");
+                goto name;
+            }
+        teachername: Design.MYCw(ConsoleColor.Blue, "[?] Enter Teacher Name:");
             string teachername = Console.ReadLine();
+            if (string.IsNullOrEmpty(teachername))
+            {
+                Design.MYCw(ConsoleColor.Red, "[!] Error: Teacher name is null!");
+                goto teachername;
+            }
         RoomNum: Design.MYCw(ConsoleColor.Blue, "[?] Enter room number:");
             string room = Console.ReadLine();
             if (!int.TryParse(room, out int roomNum))
@@ -197,7 +207,7 @@ namespace CourseApp.Common
                     Design.MYCw(ConsoleColor.Red, "[!] Error: Enter correct room number:");
                     goto NewRoom;
                 }
-                if (newRoom<0)
+                if (newRoom < 0)
                 {
                     Design.MYCw(ConsoleColor.Red, "[!] Error: Room number must be positive!");
                     goto NewRoom;
@@ -246,10 +256,20 @@ namespace CourseApp.Common
             }
             else
             {
-                Design.MYCw(ConsoleColor.Blue, "[?] Enter student's Name:");
+            Name: Design.MYCw(ConsoleColor.Blue, "[?] Enter student's Name:");
                 string name = Console.ReadLine();
-                Design.MYCw(ConsoleColor.Blue, "[?] Enter student's Surname:");
+                if (string.IsNullOrEmpty(name))
+                {
+                    Design.MYCw(ConsoleColor.Red, "[!] Error: Name is empty!");
+                    goto Name;
+                }
+            surnamename: Design.MYCw(ConsoleColor.Blue, "[?] Enter student's Surname:");
                 string surnamename = Console.ReadLine();
+                if (string.IsNullOrEmpty(surnamename))
+                {
+                    Design.MYCw(ConsoleColor.Red, "[!] Error: Surname is empty!");
+                    goto surnamename;
+                }
             Age: Design.MYCw(ConsoleColor.Blue, "[?] Enter student's Age (17+):");
                 string age = Console.ReadLine();
                 if (!int.TryParse(age, out int ageNum))
@@ -307,8 +327,8 @@ namespace CourseApp.Common
             string newSurname = Console.ReadLine();
             if (string.IsNullOrEmpty(newSurname)) newSurname = existStudent.Surname;
 
-            
-        NewAge: Design.MYCw(ConsoleColor.Blue, $"[?] Current Age: {existStudent.Age}. Enter New Age (leave blank to keep):");
+
+            NewAge: Design.MYCw(ConsoleColor.Blue, $"[?] Current Age: {existStudent.Age}. Enter New Age (leave blank to keep):");
             string age = Console.ReadLine();
             int newAge;
             if (string.IsNullOrEmpty(age))
